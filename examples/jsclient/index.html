@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+  <script src="lib.js"></script>
+  <script>
+    var lib = window.lib;
+    
+    window.addEventListener("load", function() {
+      init();
+    });
+   
+    function init() {
+      var submit = document.getElementById("submit");
+      submit.addEventListener("click", function(event) {
+        var text = document.getElementById("text").value;
+        call(text);
+      });
+    }
+
+    function call(text) {
+      lib.request("POST", "http://localhost:8080", {data: text}, function(response) {
+        var result = document.getElementById("result");
+        result.innerHTML = response.data;
+      }, function(response) {
+        console.log("error", response);
+      });
+    }
+  </script>
+</head>
+<body>
+  <textarea id="text" name="text" cols="120" rows="20"></textarea> 
+  <button id="submit">Send</button>
+  <div id="result"></div>
+</body>
+</html>
