@@ -17,7 +17,6 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-
 		fmt.Println(out)
 	} else {
 		fmt.Println("input text required")
