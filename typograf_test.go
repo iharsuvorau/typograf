@@ -13,7 +13,7 @@ func TestTypografy(t *testing.T) {
 		wantOut string
 		wantErr bool
 	}{
-		{"A", args{"у \"окна\" хорошо, а на диване - лучше"}, "<p>у&nbsp;&laquo;окна&raquo; хорошо, а&nbsp;на&nbsp;диване&nbsp;&#151; лучше<br /></p>", false},
+		{"A", args{"- Это \"Типограф\"?"}, "<p>&#151;&nbsp;Это &laquo;Типограф&raquo;?<br /></p>", false},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
