@@ -17,7 +17,7 @@ func TestTypografy(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			gotOut, err := Typografy(tt.args.in)
+			gotOut, err := Typogrify(tt.args.in)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("Typografy() error = %v, wantErr %v", err, tt.wantErr)
 				return

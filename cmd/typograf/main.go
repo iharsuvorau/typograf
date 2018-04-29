@@ -13,7 +13,7 @@ func main() {
 	flag.Parse()
 
 	if len(*in) > 0 {
-		out, err := typograf.Typografy(*in)
+		out, err := typograf.Typogrify(*in)
 		if err != nil {
 			log.Fatal(err)
 		}

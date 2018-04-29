@@ -107,9 +107,9 @@ func DoRequest(body *bytes.Buffer) (out string, err error) {
 	return result.Body.ProcessTextResponse.ProcessTextResult, nil
 }
 
-// Typografy gets a piece of text and typography it to the one with correct typographical characters.
+// Typogrify gets a piece of text and typography it to the one with correct typographical characters.
 // It preprocesses the given text and makes a request returning a processed text and an error.
-func Typografy(in string) (out string, err error) {
+func Typogrify(in string) (out string, err error) {
 	reqBody, err := PrepareRequestBody(in)
 	if err != nil {
 		return
