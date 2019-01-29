@@ -8,7 +8,7 @@ In `examples` you can find a JavaScript client example which utilizes the webser
 ## Console utility usage:
 
 ```
-$ typograf -i "- Это "Типограф"?"
+$ echo "- Это "Типограф"?" | typograf
 ```
 
 Output:
