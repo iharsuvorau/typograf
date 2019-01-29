@@ -1,24 +1,27 @@
 package main
 
 import (
-	"flag"
 	"fmt"
+	"io/ioutil"
 	"log"
+	"os"
 
 	"github.com/iharsuvorau/typograf"
 )
 
 func main() {
-	in := flag.String("i", "", "input text, must be in double quotes")
-	flag.Parse()
+	b, err := ioutil.ReadAll(os.Stdin)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	if len(*in) > 0 {
-		out, err := typograf.Typogrify(*in)
+	if s := fmt.Sprintf("%s", b); len(s) > 0 {
+		out, err := typograf.Typogrify(s)
 		if err != nil {
 			log.Fatal(err)
 		}
 		fmt.Println(out)
 	} else {
-		fmt.Println("input text required")
+		fmt.Println("no input")
 	}
 }

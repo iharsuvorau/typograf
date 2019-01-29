@@ -7,7 +7,6 @@ package typograf
 import (
 	"bytes"
 	"encoding/xml"
-	"log"
 	"net/http"
 	"strings"
 	"time"
@@ -89,12 +88,12 @@ func DoRequest(body *bytes.Buffer) (out string, err error) {
 	req.Header.Add("Content-Length", string(body.Len()))
 	req.Header.Add("SOAPAction", "http://typograf.artlebedev.ru/webservices/ProcessText")
 
-	start := time.Now()
+	//start := time.Now()
 	resp, err := client.Do(req)
 	if err != nil {
 		return
 	}
-	log.Printf("origin request made in %v\n", time.Since(start))
+	//log.Printf("origin request made in %v\n", time.Since(start))
 	defer resp.Body.Close()
 
 	// decoding a response
